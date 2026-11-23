@@ -60,7 +60,7 @@ button, input, select { font: inherit; }
 .play-button { display:flex; align-items:center; gap:12px; color:white; background:none; border:0; font-size:12px; cursor:pointer; }
 .play-icon { display:grid; place-items:center; width:46px; height:46px; padding-left:3px; border:1px solid rgba(255,255,255,.38); border-radius:50%; font-size:10px; transition:.25s; }
 .play-button:hover .play-icon { background:var(--acid); color:var(--ink); border-color:var(--acid); }
-.hero-aside { position:absolute; z-index:2; right:4.5vw; bottom:48px; display:flex; align-items:center; gap:42px; }
+.hero-aside { position:absolute; z-index:2; right:4.5vw; bottom:48px; min-width:380px; display:flex; align-items:center; justify-content:flex-end; gap:52px; }
 .availability { font-size:14px; text-transform:uppercase; letter-spacing:1.3px; }
 .availability i { display:inline-block; width:7px; height:7px; margin-right:7px; background:var(--acid); border-radius:50%; box-shadow:0 0 12px var(--acid); }
 .rating { display:flex; align-items:center; gap:12px; border-left:1px solid rgba(255,255,255,.25); padding-left:35px; }
