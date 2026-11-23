@@ -27,8 +27,8 @@ button, input, select { font: inherit; }
 .nav a { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; opacity: .82; transition: .25s; }
 .nav a:hover { color: var(--acid); opacity: 1; }
 .header-action { justify-self: end; display: flex; align-items: center; gap: 18px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.header-action span { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; transition: .25s; }
-.header-action:hover span { background: var(--acid); color: var(--ink); border-color: var(--acid); }
+.header-action { transition:.25s; }
+.header-action:hover { color:var(--acid); }
 .menu-button { display: none; background: none; border: 0; color: inherit; }
 
 .hero { position: relative; min-height: 760px; height: 100vh; max-height: 920px; overflow: hidden; color: white; background: #17181b; }
@@ -55,8 +55,6 @@ button, input, select { font: inherit; }
 .hero-actions { display:flex; align-items:center; justify-content:center; gap:28px; }
 .button { height:58px; display:inline-flex; align-items:center; justify-content:space-between; gap:38px; padding:0 22px; border:0; font-size:12px; text-transform:uppercase; letter-spacing:1.1px; font-weight:700; cursor:pointer; }
 .button-light { background:white; color:var(--ink); }
-.button-light span, .button-dark span { font-size:20px; transition:.25s; }
-.button-light:hover span, .button-dark:hover span { transform:translateX(6px); }
 .play-button { display:flex; align-items:center; gap:12px; color:white; background:none; border:0; font-size:12px; cursor:pointer; }
 .play-icon { display:grid; place-items:center; width:46px; height:46px; padding-left:3px; border:1px solid rgba(255,255,255,.38); border-radius:50%; font-size:10px; transition:.25s; }
 .play-button:hover .play-icon { background:var(--acid); color:var(--ink); border-color:var(--acid); }
@@ -93,7 +91,7 @@ button, input, select { font: inherit; }
 .service-info h3 { margin:0 0 8px; font-family:"Oswald"; font-size:27px; text-transform:uppercase; }
 .service-info p { margin:0; max-width:270px; color:rgba(255,255,255,.62); font-size:11px; line-height:1.6; }
 .service-info button { flex:none; display:grid; place-items:center; width:48px; height:48px; border:1px solid rgba(255,255,255,.5); border-radius:50%; color:white; background:transparent; cursor:pointer; transition:.25s; }
-.service-card:hover .service-info button { background:var(--acid); color:var(--ink); border-color:var(--acid); transform:rotate(45deg); }
+.service-card:hover .service-info button { background:var(--acid); color:var(--ink); border-color:var(--acid); }
 
 .works { background:#e2ded4; }
 .works-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); grid-template-rows:420px; gap:14px; }
@@ -118,7 +116,6 @@ button, input, select { font: inherit; }
 .price-row small { color:#77756f; font-size:11px; }
 .price-row strong { font-family:"Oswald"; font-size:20px; }
 .price-row i { display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--line); border-radius:50%; font-style:normal; transition:.25s; }
-.price-row:hover i { background:var(--acid); transform:rotate(45deg); }
 
 .masters { background:var(--ink); color:white; }
 .light-heading { align-items:start; }
