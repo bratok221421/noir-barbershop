@@ -47,9 +47,7 @@ function closeModal() {
 }
 
 modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) closeModal();
-});
+modal.addEventListener("click", closeModal);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeModal();
 });
