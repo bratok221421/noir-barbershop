@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIR — мужской барбершоп</title>
+  <meta name="description" content="NOIR — современный барбершоп для тех, кто ценит точность стиля.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a class="brand" href="#" aria-label="NOIR на главную">
+      <span class="brand-mark">N</span>
+      <span>NOIR<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Главная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#prices">Прайс</a>
+      <a href="#masters">Мастера</a>
+      <a href="#about">О нас</a>
+      <a href="#booking">Контакты</a>
+    </nav>
+    <a class="header-action" href="#booking">Записаться <span>↗</span></a>
+    <button class="menu-button" id="menuButton" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span>01</span> Мужская парикмахерская</p>
+        <h1>Форма.<br><em>Характер.</em><br>Стиль.</h1>
+        <p class="hero-lead">Мы создаём не просто причёску, а образ, который остаётся с вами после выхода из кресла.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#booking">Выбрать время <span>↗</span></a>
+          <button class="play-button" id="playButton" type="button" aria-label="Посмотреть видео">
+            <span class="play-icon">▶</span>
+            <span>Смотреть атмосферу</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero-aside reveal">
+        <div class="availability"><i></i> Открыты до 22:00</div>
+        <div class="rating">
+          <strong>4.9</strong>
+          <div><span>★★★★★</span><small>180+ отзывов</small></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#services" aria-label="К услугам"><span></span> Листай вниз</a>
+    </section>
+
+    <section class="ticker" aria-label="Преимущества">
+      <div class="ticker-track">
+        <span>Стиль без компромиссов</span><i>✦</i>
+        <span>Точное мастерство</span><i>✦</i>
+        <span>Индивидуальный подход</span><i>✦</i>
+        <span>Стиль без компромиссов</span><i>✦</i>
+        <span>Точное мастерство</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="section-heading reveal">
+        <p class="eyebrow dark"><span>02</span> Наши услуги</p>
+        <h2>Выбери свой <em>ритуал</em></h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal" data-price="1 800 ₽">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85" alt="Мужская стрижка">
+          <div class="service-overlay"></div>
+          <span class="service-number">01</span>
+          <div class="service-info">
+            <div>
+              <h3>Модельная стрижка</h3>
+              <p>Консультация · Мытьё · Стрижка · Укладка</p>
+            </div>
+            <button type="button" aria-label="Выбрать модельную стрижку">↗</button>
+          </div>
+        </article>
+        <article class="service-card reveal" data-price="1 200 ₽">
+          <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=900&q=85" alt="Уход за бородой">
+          <div class="service-overlay"></div>
+          <span class="service-number">02</span>
+          <div class="service-info">
+            <div>
+              <h3>Королевская борода</h3>
+              <p>Контуры · Травяной компресс · Масло</p>
+            </div>
+            <button type="button" aria-label="Выбрать уход за бородой">↗</button>
+          </div>
+        </article>
+        <article class="service-card reveal" data-price="2 600 ₽">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85" alt="Полный образ">
+          <div class="service-overlay"></div>
+          <span class="service-number">03</span>
+          <div class="service-info">
+            <div>
+              <h3>Стрижка + борода</h3>
+              <p>Полная трансформация образа за одно посещение</p>
+            </div>
+            <button type="button" aria-label="Выбрать стрижку и бороду">↗</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="works section" id="works">
+      <div class="section-heading reveal">
+        <p class="eyebrow dark"><span>03</span> Портфолио</p>
+        <h2>Работы <em>мастеров</em></h2>
+      </div>
+      <div class="works-grid">
+        <article class="work-card work-tall reveal">
+          <img src="assets/work-1.jpg" alt="Готовая мужская стрижка classic fade">
+          <div class="work-meta"><span>Classic fade</span><strong>Артём Волков</strong></div>
+        </article>
+        <article class="work-card reveal">
+          <img src="assets/work-2.jpg" alt="Готовая мужская стрижка textured crop">
+          <div class="work-meta"><span>Textured crop</span><strong>Макс Романов</strong></div>
+        </article>
+        <article class="work-card reveal">
+          <img src="assets/work-3.jpg" alt="Готовая мужская стрижка low taper">
+          <div class="work-meta"><span>Low taper</span><strong>Илья Соколов</strong></div>
+        </article>
+        <article class="work-card reveal">
+          <img src="assets/work-4.jpg" alt="Готовая мужская стрижка с оформленной линией">
+          <div class="work-meta"><span>Gentleman's cut</span><strong>Артём Волков</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="price-list section" id="prices">
+      <div class="price-heading reveal">
+        <p class="eyebrow dark"><span>04</span> Прайс</p>
+        <h2>Простые цены.<br><em>Без сюрпризов.</em></h2>
+      </div>
+      <div class="price-table reveal">
+        <button class="price-row" type="button" data-service="Мужская стрижка">
+          <span>Мужская стрижка</span><small>60–75 мин</small><strong>1 800 ₽</strong><i>↗</i>
+        </button>
+        <button class="price-row" type="button" data-service="Стрижка машинкой">
+          <span>Стрижка машинкой</span><small>30 мин</small><strong>900 ₽</strong><i>↗</i>
+        </button>
+        <button class="price-row" type="button" data-service="Моделирование бороды">
+          <span>Моделирование бороды</span><small>40 мин</small><strong>1 200 ₽</strong><i>↗</i>
+        </button>
+        <button class="price-row" type="button" data-service="Королевское бритьё">
+          <span>Королевское бритьё</span><small>45 мин</small><strong>1 500 ₽</strong><i>↗</i>
+        </button>
+        <button class="price-row" type="button" data-service="Стрижка + борода">
+          <span>Стрижка + борода</span><small>90 мин</small><strong>2 600 ₽</strong><i>↗</i>
+        </button>
+        <button class="price-row" type="button" data-service="Отец и сын">
+          <span>Отец и сын</span><small>90 мин</small><strong>3 000 ₽</strong><i>↗</i>
+        </button>
+      </div>
+    </section>
+
+    <section class="masters section" id="masters">
+      <div class="section-heading light-heading reveal">
+        <p class="eyebrow"><span>03</span> Команда</p>
+        <h2>Мастера своего <em>дела</em></h2>
+      </div>
+      <div class="master-layout">
+        <article class="master-card reveal">
+          <div class="master-photo">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90" alt="Портрет мастера Артёма Волкова">
+          </div>
+          <div class="master-meta"><div><h3>Артём Волков</h3><p>Senior barber</p></div><span>10 лет</span></div>
+        </article>
+        <article class="master-card featured reveal">
+          <div class="master-photo">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=90" alt="Портрет мастера Макса Романова">
+          </div>
+          <div class="master-meta"><div><h3>Макс Романов</h3><p>Art director</p></div><span>12 лет</span></div>
+        </article>
+        <article class="master-card reveal">
+          <div class="master-photo">
+            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=900&q=90" alt="Портрет мастера Ильи Соколова">
+          </div>
+          <div class="master-meta"><div><h3>Илья Соколов</h3><p>Top barber</p></div><span>7 лет</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="booking section" id="booking">
+      <div class="booking-panel reveal">
+        <div class="booking-copy">
+          <p class="eyebrow dark"><span>04</span> Запись онлайн</p>
+          <h2>Твоя новая<br><em>форма уже близко</em></h2>
+          <p>Выберите удобный день и мастер свяжется с вами для подтверждения.</p>
+          <div class="booking-details">
+            <div><span>Адрес</span><strong>ул. Ленина, 24</strong></div>
+            <div><span>Телефон</span><strong>+7 900 555-35-35</strong></div>
+          </div>
+        </div>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-row">
+            <label>Услуга
+              <select name="service">
+                <option>Модельная стрижка — 1 800 ₽</option>
+                <option>Королевская борода — 1 200 ₽</option>
+                <option>Стрижка + борода — 2 600 ₽</option>
+              </select>
+            </label>
+            <label>Мастер
+              <select name="master">
+                <option>Любой мастер</option>
+                <option>Артём Волков</option>
+                <option>Макс Романов</option>
+                <option>Илья Соколов</option>
+              </select>
+            </label>
+          </div>
+          <label>Имя
+            <input type="text" name="name" placeholder="Как вас зовут?" required>
+          </label>
+          <label>Телефон
+            <input type="tel" name="phone" placeholder="+7 ___ ___-__-__" required>
+          </label>
+          <button class="button button-dark" type="submit">Записаться <span>↗</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#"><span class="brand-mark">N</span><span>NOIR<span class="brand-dot">.</span></span></a>
+    <p>Стиль начинается здесь.</p>
+    <p>© 2026 NOIR BARBERSHOP</p>
+  </footer>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">×</button>
+    <div class="modal-content">
+      <div class="video-placeholder">
+        <span>NOIR</span>
+        <p>Атмосфера мужского ритуала</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
