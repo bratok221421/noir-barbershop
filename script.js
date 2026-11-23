@@ -38,9 +38,17 @@ playButton.addEventListener("click", () => {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
+  if (modal.requestFullscreen) {
+    modal.requestFullscreen().catch(() => {});
+  } else if (modal.webkitRequestFullscreen) {
+    modal.webkitRequestFullscreen();
+  }
 });
 
 function closeModal() {
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(() => {});
+  }
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
