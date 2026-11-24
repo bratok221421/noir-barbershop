@@ -34,7 +34,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
+const atmoVideo = document.getElementById("atmoVideo");
+atmoVideo.addEventListener("canplay", () => modal.classList.add("has-video"));
+atmoVideo.addEventListener("error", () => modal.classList.remove("has-video"));
+
 playButton.addEventListener("click", () => {
+  atmoVideo.play().catch(() => {}); // нет файла assets/atmosphere.mp4 — остаётся картинка
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
@@ -49,13 +54,22 @@ function closeModal() {
   if (document.fullscreenElement) {
     document.exitFullscreen().catch(() => {});
   }
+  atmoVideo.pause();
+  atmoVideo.currentTime = 0;
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 }
 
 modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", closeModal);
+modal.addEventListener("click", (event) => {
+  if (event.target.closest("video")) return; // клики по плееру не закрывают окно
+  closeModal();
+});
+// Esc в полноэкранном режиме закрывает только полный экран, поэтому закрываем окно сами
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement && modal.classList.contains("open")) closeModal();
+});
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeModal();
 });
@@ -65,7 +79,7 @@ document.querySelectorAll(".service-card").forEach((card) => {
   card.setAttribute("role", "button");
   card.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); } });
   card.addEventListener("click", () => {
-    const title = card.querySelector("h3").textContent;
+    const title = card.dataset.service || card.querySelector("h3").textContent;
     const serviceSelect = bookingForm.querySelector('[name="service"]');
     for (const option of serviceSelect.options) {
       if (option.textContent.includes(title)) {

@@ -90,7 +90,7 @@
         <h2>Выбери свой <em>ритуал</em></h2>
       </div>
       <div class="service-grid">
-        <article class="service-card reveal" data-price="1 800 ₽">
+        <article class="service-card reveal" data-price="1 000 ₽" data-service="Мужская стрижка">
           <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85" alt="Мужская стрижка" onerror="this.onerror=null;this.src='assets/work-2.jpg'">
           <div class="service-overlay"></div>
           <span class="service-number">01</span>
@@ -102,7 +102,7 @@
             <button type="button" aria-label="Выбрать модельную стрижку"></button>
           </div>
         </article>
-        <article class="service-card reveal" data-price="1 200 ₽">
+        <article class="service-card reveal" data-price="1 000 ₽" data-service="Стрижка бороды">
           <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=900&q=85" alt="Уход за бородой" onerror="this.onerror=null;this.src='assets/work-4.jpg'">
           <div class="service-overlay"></div>
           <span class="service-number">02</span>
@@ -114,7 +114,7 @@
             <button type="button" aria-label="Выбрать уход за бородой"></button>
           </div>
         </article>
-        <article class="service-card reveal" data-price="2 600 ₽">
+        <article class="service-card reveal" data-price="1 500 ₽" data-service="Стрижка головы + моделирование бороды">
           <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85" alt="Полный образ" onerror="this.onerror=null;this.src='assets/work-1.jpg'">
           <div class="service-overlay"></div>
           <span class="service-number">03</span>
@@ -160,23 +160,30 @@
         <h2>Простые цены.<br><em>Без сюрпризов.</em></h2>
       </div>
       <div class="price-table reveal">
+        <button class="price-row" type="button" data-service="Камуфляж бороды">
+          <span>Камуфляж бороды</span><strong>800 ₽</strong>
+        </button>
+        <button class="price-row" type="button" data-service="Стрижка головы + моделирование бороды">
+          <span>Стрижка головы + моделирование бороды</span><strong>1 500 ₽</strong>
+        </button>
+        <button class="price-row" type="button" data-service="Детская стрижка">
+          <span>Детская стрижка</span><strong>1 000 ₽</strong>
+        </button>
+        <button class="price-row" type="button" data-service="Стрижка бороды">
+          <span>Стрижка бороды</span><strong>1 000 ₽</strong>
+        </button>
         <button class="price-row" type="button" data-service="Мужская стрижка">
-          <span>Мужская стрижка</span><small>60–75 мин</small><strong>1 800 ₽</strong><i></i>
+          <span>Мужская стрижка</span><strong>1 000 ₽</strong>
         </button>
-        <button class="price-row" type="button" data-service="Стрижка машинкой">
-          <span>Стрижка машинкой</span><small>30 мин</small><strong>900 ₽</strong><i></i>
+        <button class="price-row" type="button" data-service="Ваксинг (коррекция воском)">
+          <span>Ваксинг (коррекция воском)</span><strong>300 ₽</strong>
         </button>
-        <button class="price-row" type="button" data-service="Моделирование бороды">
-          <span>Моделирование бороды</span><small>40 мин</small><strong>1 200 ₽</strong><i></i>
+        <button class="price-row" type="button" data-service="Окантовка (освежить стрижку)">
+          <span>Окантовка (освежить стрижку)</span><strong>500 ₽</strong>
         </button>
-        <button class="price-row" type="button" data-service="Королевское бритьё">
-          <span>Королевское бритьё</span><small>45 мин</small><strong>1 500 ₽</strong><i></i>
-        </button>
-        <button class="price-row" type="button" data-service="Стрижка + борода">
-          <span>Стрижка + борода</span><small>90 мин</small><strong>2 600 ₽</strong><i></i>
-        </button>
-        <button class="price-row" type="button" data-service="Отец и сын">
-          <span>Отец и сын</span><small>90 мин</small><strong>3 000 ₽</strong><i></i>
+        <p class="price-group">Школа барберов</p>
+        <button class="price-row" type="button" data-service="Курс обучения «Барбер с нуля»">
+          <span>Курс обучения «Барбер с нуля»</span><strong>50 000 ₽</strong>
         </button>
       </div>
     </section>
@@ -229,14 +236,14 @@
           <div class="form-row">
             <label>Услуга
               <select name="service">
-                <option>Модельная стрижка — 1 800 ₽</option>
-                <option>Мужская стрижка — 1 800 ₽</option>
-                <option>Стрижка машинкой — 900 ₽</option>
-                <option>Королевская борода — 1 200 ₽</option>
-                <option>Моделирование бороды — 1 200 ₽</option>
-                <option>Королевское бритьё — 1 500 ₽</option>
-                <option>Стрижка + борода — 2 600 ₽</option>
-                <option>Отец и сын — 3 000 ₽</option>
+                <option>Камуфляж бороды — 800 ₽</option>
+                <option>Стрижка головы + моделирование бороды — 1 500 ₽</option>
+                <option>Детская стрижка — 1 000 ₽</option>
+                <option>Стрижка бороды — 1 000 ₽</option>
+                <option>Мужская стрижка — 1 000 ₽</option>
+                <option>Ваксинг (коррекция воском) — 300 ₽</option>
+                <option>Окантовка (освежить стрижку) — 500 ₽</option>
+                <option>Курс обучения «Барбер с нуля» — 50 000 ₽</option>
               </select>
             </label>
             <label>Мастер
@@ -277,6 +284,7 @@
         <span>NOIR</span>
         <p>Атмосфера мужского ритуала</p>
       </div>
+      <video class="atmo-video" id="atmoVideo" src="assets/atmosphere.mp4" preload="none" playsinline loop controls></video>
     </div>
   </div>
   <script src="script.js"></script>
