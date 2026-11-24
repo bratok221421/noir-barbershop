@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOIR — мужской барбершоп</title>
-  <meta name="description" content="NOIR — современный барбершоп для тех, кто ценит точность стиля.">
+  <title>ARS BARBERSHOP — мужской барбершоп</title>
+  <meta name="description" content="ARS BARBERSHOP — современный барбершоп для тех, кто ценит точность стиля.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/ars-welcome.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <noscript><style>.preloader{display:none!important}body.loading{overflow:auto!important}</style></noscript>
 </head>
-<body>
+<body class="loading">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Загрузка сайта">
+    <img class="preloader-photo" src="assets/ars-welcome.webp" alt="" fetchpriority="high">
+    <div class="preloader-shade"></div>
+    <div class="preloader-content">
+      <p class="preloader-hello"><span>Вас приветствует</span></p>
+      <h2 class="preloader-title"><span class="line"><b>ARS</b></span><span class="line"><b>BARBERSHOP</b></span></h2>
+      <div class="preloader-progress">
+        <div class="preloader-line"><i id="preloaderBar"></i></div>
+        <p class="preloader-count"><span id="preloaderCount">0</span>%</p>
+      </div>
+    </div>
+  </div>
   <header class="header" id="header">
-    <a class="brand" href="#" aria-label="NOIR на главную">
-      <span class="brand-mark">N</span>
-      <span>NOIR<span class="brand-dot">.</span></span>
+    <a class="brand" href="#" aria-label="ARS BARBERSHOP на главную">
+      <span class="brand-mark">A</span>
+      <span class="brand-name"><span class="brand-title">ARS<span class="brand-dot">.</span></span><small>BARBERSHOP</small></span>
     </a>
     <nav class="nav" id="nav" aria-label="Главная навигация">
       <a href="#services">Услуги</a>
@@ -272,16 +286,16 @@
   </main>
 
   <footer>
-    <a class="brand" href="#"><span class="brand-mark">N</span><span>NOIR<span class="brand-dot">.</span></span></a>
+    <a class="brand" href="#" aria-label="ARS BARBERSHOP на главную"><span class="brand-mark">A</span><span class="brand-name"><span class="brand-title">ARS<span class="brand-dot">.</span></span><small>BARBERSHOP</small></span></a>
     <p>Стиль начинается здесь.</p>
-    <p>© 2026 NOIR BARBERSHOP</p>
+    <p>© 2026 ARS BARBERSHOP</p>
   </footer>
 
   <div class="video-modal" id="videoModal" aria-hidden="true">
     <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">×</button>
     <div class="modal-content">
       <div class="video-placeholder">
-        <span>NOIR</span>
+        <span>ARS BARBERSHOP</span>
         <p>Атмосфера мужского ритуала</p>
       </div>
       <video class="atmo-video" id="atmoVideo" src="assets/atmosphere.mp4" preload="none" playsinline loop controls></video>

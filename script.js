@@ -32,7 +32,52 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+function startReveal() {
+  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+}
+
+// ===== Заставка «Вас приветствует ARS BARBERSHOP» =====
+const preloader = document.getElementById("preloader");
+const MIN_SHOW = 2200;   // минимум, чтобы успеть прочитать приветствие
+const MAX_SHOW = 7000;   // страховка: если что-то грузится слишком долго
+if (!preloader) {
+  document.body.classList.remove("loading");
+  startReveal();
+} else {
+  const bar = document.getElementById("preloaderBar");
+  const count = document.getElementById("preloaderCount");
+  const started = performance.now();
+  let loaded = document.readyState === "complete";
+  let finished = false;
+  let progress = 0;
+
+  window.addEventListener("load", () => { loaded = true; });
+  setTimeout(() => { loaded = true; }, MAX_SHOW);
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    document.body.classList.remove("loading");
+    preloader.classList.add("hide");
+    startReveal(); // текст на главной появляется, пока шторка уезжает
+    const remove = () => preloader.remove();
+    preloader.addEventListener("transitionend", (e) => { if (e.target === preloader) remove(); });
+    setTimeout(remove, 1600);
+  }
+
+  function tick(now) {
+    const elapsed = now - started;
+    const canFinish = loaded && elapsed >= MIN_SHOW;
+    const target = canFinish ? 100 : Math.min(92, 92 * (1 - Math.exp(-elapsed / 1300)));
+    progress += (target - progress) * 0.14;
+    if (canFinish && progress > 99.4) progress = 100;
+    bar.style.transform = `scaleX(${progress / 100})`;
+    count.textContent = Math.round(progress);
+    if (progress >= 100) setTimeout(finish, 250);
+    else requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
 
 const atmoVideo = document.getElementById("atmoVideo");
 atmoVideo.addEventListener("canplay", () => modal.classList.add("has-video"));
@@ -179,7 +224,7 @@ bookingForm.addEventListener("submit", async (event) => {
       showStatus(`Спасибо, ${name}! Заявка отправлена — скоро перезвоним.`, false);
       bookingForm.reset();
     } else {
-      const text = `Здравствуйте! Хочу записаться в NOIR.\nУслуга: ${payload.service}\nМастер: ${payload.master}\nИмя: ${payload.name}\nТелефон: ${payload.phone}`;
+      const text = `Здравствуйте! Хочу записаться в ARS BARBERSHOP.\nУслуга: ${payload.service}\nМастер: ${payload.master}\nИмя: ${payload.name}\nТелефон: ${payload.phone}`;
       const url = `https://wa.me/${BOOKING_CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
       const opened = window.open(url, "_blank", "noopener");
       showStatus(
