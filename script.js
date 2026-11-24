@@ -133,10 +133,9 @@ document.querySelectorAll(".price-row").forEach((row) => {
 
 // ===== Запись онлайн =====
 // ENDPOINT: сюда вставьте адрес приёма заявок (например, https://formspree.io/f/xxxxxxx).
-// Если пусто — заявка уходит сообщением в WhatsApp на номер WHATSAPP.
+// Если пусто, форма предложит позвонить для подтверждения записи.
 const BOOKING_CONFIG = {
-  endpoint: "",
-  whatsapp: "79781617720"
+  endpoint: ""
 };
 
 const phoneInput = bookingForm.querySelector('[name="phone"]');
@@ -167,7 +166,12 @@ function showStatus(text, isError, link) {
   formStatus.textContent = text;
   if (link) {
     const a = document.createElement("a");
-    a.href = link.href; a.target = "_blank"; a.rel = "noopener"; a.textContent = link.label;
+    a.href = link.href;
+    if (!link.href.startsWith("tel:")) {
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+    a.textContent = link.label;
     formStatus.append(" ", a);
   }
 }
@@ -205,19 +209,16 @@ bookingForm.addEventListener("submit", async (event) => {
       showStatus(`Спасибо, ${name}! Заявка отправлена — скоро перезвоним.`, false);
       bookingForm.reset();
     } else {
-      const text = `Здравствуйте! Хочу записаться в ARS BARBERSHOP.\nУслуга: ${payload.service}\nМастер: ${payload.master}\nИмя: ${payload.name}\nТелефон: ${payload.phone}`;
-      const url = `https://wa.me/${BOOKING_CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
-      const opened = window.open(url, "_blank", "noopener");
-      showStatus(
-        opened ? "Открыли WhatsApp — отправьте сообщение, и мы подтвердим запись."
-               : "Не удалось открыть WhatsApp автоматически.",
-        !opened,
-        opened ? null : { href: url, label: "Открыть WhatsApp" }
-      );
-      if (opened) bookingForm.reset();
+      showStatus("Онлайн-запись пока не подключена. Позвоните нам:", true, {
+        href: "tel:+79781617720",
+        label: "+7 (978) 161-77-20"
+      });
     }
   } catch (error) {
-    showStatus("Не получилось отправить заявку. Позвоните нам: +7 (978) 161-77-20.", true);
+    showStatus("Не получилось отправить заявку. Позвоните нам:", true, {
+      href: "tel:+79781617720",
+      label: "+7 (978) 161-77-20"
+    });
   } finally {
     submitButton.disabled = false;
   }
