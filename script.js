@@ -80,14 +80,19 @@ if (!preloader) {
 }
 
 const atmoVideo = document.getElementById("atmoVideo");
-atmoVideo.addEventListener("canplay", () => modal.classList.add("has-video"));
+atmoVideo.addEventListener("playing", () => modal.classList.add("has-video"));
 atmoVideo.addEventListener("error", () => modal.classList.remove("has-video"));
 
 playButton.addEventListener("click", () => {
-  atmoVideo.play().catch(() => {}); // нет файла assets/atmosphere.mp4 — остаётся картинка
+  modal.classList.remove("has-video");
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
+  atmoVideo.play().then(() => {
+    modal.classList.add("has-video");
+  }).catch(() => {
+    modal.classList.remove("has-video");
+  });
   if (modal.requestFullscreen) {
     modal.requestFullscreen().catch(() => {});
   } else if (modal.webkitRequestFullscreen) {
@@ -101,6 +106,7 @@ function closeModal() {
   }
   atmoVideo.pause();
   atmoVideo.currentTime = 0;
+  modal.classList.remove("has-video");
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");

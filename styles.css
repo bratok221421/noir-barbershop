@@ -39,7 +39,7 @@ button, input, select { font: inherit; }
   position: absolute; inset: 0;
   background:
     radial-gradient(ellipse at center, rgba(10,11,13,.38) 0%, rgba(10,11,13,.12) 70%, rgba(10,11,13,.04) 100%),
-    url("https://images.unsplash.com/photo-1634480256829-5c0f46f7b7c4?auto=format&fit=crop&w=2000&q=90") 72% 28%/cover no-repeat;
+    url("ars-welcome.webp") 72% 28%/cover no-repeat;
   transform: scale(1.03); animation: heroZoom 12s ease-out forwards;
 }
 @keyframes heroZoom { to { transform: scale(1); } }
@@ -170,7 +170,7 @@ footer p:last-child { text-align:right; }
 .video-modal.open { opacity:1; visibility:visible; }
 .modal-content { position:relative; width:100vw; height:100vh; max-width:none; max-height:none; aspect-ratio:auto; transform:scale(1.05); transition:transform .6s cubic-bezier(.2,.7,.2,1); }
 .video-modal.open .modal-content { transform:scale(1); }
-.video-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; background:linear-gradient(180deg, rgba(0,0,0,.05) 35%, rgba(0,0,0,.55)), url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat #1a1a1d; }
+.video-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; background:linear-gradient(180deg, rgba(0,0,0,.05) 35%, rgba(0,0,0,.55)), url("ars-welcome.webp") center/cover no-repeat #1a1a1d; }
 .video-placeholder span { padding:0 20px; text-align:center; font-family:"Oswald"; font-size:clamp(30px, 7.5vw, 120px); letter-spacing:.08em; color:white; text-shadow:0 4px 40px rgba(0,0,0,.45); }
 .video-placeholder p { color:var(--acid); text-transform:uppercase; letter-spacing:4px; font-size:13px; text-shadow:0 2px 16px rgba(0,0,0,.6); }
 .modal-close { position:absolute; z-index:5; right:35px; top:25px; width:52px; height:52px; border:1px solid rgba(255,255,255,.55); border-radius:50%; background:rgba(0,0,0,.35); backdrop-filter:blur(6px); color:white; font-size:28px; cursor:pointer; transition:.25s; }
@@ -261,7 +261,7 @@ footer p:last-child { text-align:right; }
 .price-row > span { padding-right:8px; }
 .price-row strong { white-space:nowrap; }
 
-.atmo-video { position:absolute; inset:0; z-index:1; width:100%; height:100%; object-fit:contain; background:#000; opacity:0; pointer-events:none; transition:opacity .4s; }
+.atmo-video { position:absolute; inset:0; z-index:1; width:100%; height:100%; object-fit:cover; background:#000; opacity:0; pointer-events:none; transition:opacity .4s; }
 .video-modal.has-video .atmo-video { opacity:1; pointer-events:auto; }
 
 /* ===== Заставка ===== */
