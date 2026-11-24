@@ -208,7 +208,7 @@ footer p:last-child { text-align:right; }
   .brand { gap:10px; font-size:30px; }
   .brand-mark { width:44px; height:44px; font-size:23px; }
   .hero { min-height:680px; }
-  .hero-bg { background-position:62% center; }
+  .hero-bg { background-position:center, 82% 28%; }
   .hero-copy { padding:80px 22px 90px; text-align:center; }
   .hero-copy .eyebrow { justify-content:center; }
   .hero h1 { font-size:min(17vw, 84px); letter-spacing:-.03em; }
