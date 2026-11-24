@@ -1,8 +1,8 @@
 const header = document.getElementById("header");
 const menuButton = document.getElementById("menuButton");
 const nav = document.getElementById("nav");
-const modal = document.getElementById("videoModal");
-const playButton = document.getElementById("playButton");
+const modal = document.getElementById("atmosphereModal");
+const atmosphereButton = document.getElementById("openAtmosphereButton");
 const modalClose = document.getElementById("modalClose");
 const bookingForm = document.getElementById("bookingForm");
 const formStatus = document.getElementById("formStatus");
@@ -79,50 +79,25 @@ if (!preloader) {
   requestAnimationFrame(tick);
 }
 
-const atmoVideo = document.getElementById("atmoVideo");
-atmoVideo.addEventListener("playing", () => modal.classList.add("has-video"));
-atmoVideo.addEventListener("error", () => modal.classList.remove("has-video"));
-
-playButton.addEventListener("click", () => {
-  modal.classList.remove("has-video");
+atmosphereButton.addEventListener("click", () => {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
-  atmoVideo.play().then(() => {
-    modal.classList.add("has-video");
-  }).catch(() => {
-    modal.classList.remove("has-video");
-  });
-  if (modal.requestFullscreen) {
-    modal.requestFullscreen().catch(() => {});
-  } else if (modal.webkitRequestFullscreen) {
-    modal.webkitRequestFullscreen();
-  }
 });
 
 function closeModal() {
-  if (document.fullscreenElement) {
-    document.exitFullscreen().catch(() => {});
-  }
-  atmoVideo.pause();
-  atmoVideo.currentTime = 0;
-  modal.classList.remove("has-video");
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+  atmosphereButton.focus();
 }
 
 modalClose.addEventListener("click", closeModal);
 modal.addEventListener("click", (event) => {
-  if (event.target.closest("video")) return; // клики по плееру не закрывают окно
-  closeModal();
-});
-// Esc в полноэкранном режиме закрывает только полный экран, поэтому закрываем окно сами
-document.addEventListener("fullscreenchange", () => {
-  if (!document.fullscreenElement && modal.classList.contains("open")) closeModal();
+  if (event.target === modal) closeModal();
 });
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeModal();
+  if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
 });
 
 document.querySelectorAll(".service-card").forEach((card) => {
