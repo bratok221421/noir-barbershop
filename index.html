@@ -9,7 +9,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/ars-welcome.webp" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+.brand-name{display:flex;flex-direction:column;line-height:1}
+.brand-title{display:block}
+.brand-name small{display:block;margin-top:5px;font-family:"Manrope",sans-serif;font-size:8px;font-weight:700;letter-spacing:4.2px;opacity:.7}
+/* ===== Заставка ===== */
+body.loading { overflow:hidden; }
+.preloader { position:fixed; z-index:2000; inset:0; overflow:hidden; background:#09090a; color:white; transition:transform .95s cubic-bezier(.77,0,.18,1); }
+.preloader.hide { transform:translateY(-100%); }
+.preloader-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:72% center; transform:scale(1.12); animation:preloaderZoom 3.2s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes preloaderZoom { to { transform:scale(1); } }
+.preloader-shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(9,9,10,.92) 0%, rgba(9,9,10,.62) 42%, rgba(9,9,10,.08) 78%), linear-gradient(0deg, rgba(9,9,10,.55) 0%, transparent 35%); }
+.preloader-content { position:absolute; z-index:2; left:8.5vw; bottom:12vh; width:min(860px, 84vw); transition:opacity .35s, transform .6s; }
+.preloader.hide .preloader-content { opacity:0; transform:translateY(-24px); }
+.preloader-hello { margin:0 0 22px; display:flex; align-items:center; gap:16px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:4px; color:#d8ff3e; overflow:hidden; }
+.preloader-hello::before { content:""; width:48px; height:1px; background:#d8ff3e; transform-origin:left; animation:preloaderLine .9s .15s cubic-bezier(.2,.7,.2,1) both; }
+.preloader-hello span { display:block; animation:preloaderUp .9s .25s cubic-bezier(.2,.7,.2,1) both; }
+.preloader-title { margin:0; font-family:"Oswald", sans-serif; font-weight:500; font-size:clamp(48px, 8.2vw, 136px); line-height:.9; letter-spacing:-.02em; text-transform:uppercase; }
+.preloader-title .line { display:block; padding-bottom:.04em; clip-path:inset(0 -100vw 0 0); }
+.preloader-title b { display:block; font-weight:500; animation:preloaderUp 1s cubic-bezier(.2,.7,.2,1) both; }
+.preloader-title .line:nth-child(1) b { animation-delay:.4s; }
+.preloader-title .line:nth-child(2) b { animation-delay:.55s; color:#d8ff3e; }
+@keyframes preloaderUp { from { transform:translateY(110%); } to { transform:none; } }
+@keyframes preloaderLine { from { transform:scaleX(0); } to { transform:none; } }
+.preloader-progress { display:flex; align-items:center; gap:20px; max-width:520px; margin-top:38px; }
+.preloader-line { flex:1; height:2px; background:rgba(255,255,255,.2); overflow:hidden; }
+.preloader-line i { display:block; width:100%; height:100%; background:#d8ff3e; transform:scaleX(0); transform-origin:left; }
+.preloader-count { margin:0; min-width:64px; text-align:right; font-family:"Oswald", sans-serif; font-size:22px; letter-spacing:1px; font-variant-numeric:tabular-nums; }
+@media (max-width: 760px) {
+  .preloader-photo { object-position:78% center; }
+  .preloader-shade { background:linear-gradient(0deg, rgba(9,9,10,.94) 0%, rgba(9,9,10,.6) 42%, rgba(9,9,10,.05) 80%); }
+  .preloader-content { left:22px; right:22px; bottom:9vh; width:auto; }
+  .preloader-hello { font-size:11px; letter-spacing:3px; }
+  .preloader-title { font-size:min(12vw, 80px); }
+  .brand-name small { letter-spacing:3.6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader { transition:opacity .4s; }
+  .preloader.hide { transform:none; opacity:0; }
+  .preloader-photo, .preloader-hello::before, .preloader-hello span, .preloader-title b { animation:none; transform:none; }
+}
+
+</style>
+  <link rel="stylesheet" href="styles.css?v=12">
   <noscript><style>.preloader{display:none!important}body.loading{overflow:auto!important}</style></noscript>
 </head>
 <body class="loading">
@@ -301,6 +343,6 @@
       <video class="atmo-video" id="atmoVideo" src="assets/atmosphere.mp4" preload="none" playsinline loop controls></video>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
