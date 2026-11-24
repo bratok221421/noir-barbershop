@@ -136,7 +136,7 @@ document.querySelectorAll(".price-row").forEach((row) => {
 // Если пусто — заявка уходит сообщением в WhatsApp на номер WHATSAPP.
 const BOOKING_CONFIG = {
   endpoint: "",
-  whatsapp: "79005553535"
+  whatsapp: "79781617720"
 };
 
 const phoneInput = bookingForm.querySelector('[name="phone"]');
@@ -217,7 +217,7 @@ bookingForm.addEventListener("submit", async (event) => {
       if (opened) bookingForm.reset();
     }
   } catch (error) {
-    showStatus("Не получилось отправить заявку. Позвоните нам: +7 900 555-35-35.", true);
+    showStatus("Не получилось отправить заявку. Позвоните нам: +7 (978) 161-77-20.", true);
   } finally {
     submitButton.disabled = false;
   }
