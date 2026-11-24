@@ -216,7 +216,13 @@
           <p>Выберите удобный день и мастер свяжется с вами для подтверждения.</p>
           <div class="booking-details">
             <div><span>Адрес</span><strong>ул. Ленина, 24</strong></div>
-            <div><span>Телефон</span><strong>+7 900 555-35-35</strong></div>
+            <div><span>Телефон</span><strong><a href="tel:+79005553535">+7 900 555-35-35</a></strong></div>
+            <div><span>Работаем</span><strong>Ежедневно до 22:00</strong></div>
+          </div>
+          <div class="contact-actions">
+            <a class="chip" href="tel:+79005553535">Позвонить</a>
+            <a class="chip" href="https://wa.me/79005553535" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="chip" href="https://yandex.ru/maps/?text=%D1%83%D0%BB.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2024" target="_blank" rel="noopener">Как добраться</a>
           </div>
         </div>
         <form class="booking-form" id="bookingForm">
@@ -224,8 +230,13 @@
             <label>Услуга
               <select name="service">
                 <option>Модельная стрижка — 1 800 ₽</option>
+                <option>Мужская стрижка — 1 800 ₽</option>
+                <option>Стрижка машинкой — 900 ₽</option>
                 <option>Королевская борода — 1 200 ₽</option>
+                <option>Моделирование бороды — 1 200 ₽</option>
+                <option>Королевское бритьё — 1 500 ₽</option>
                 <option>Стрижка + борода — 2 600 ₽</option>
+                <option>Отец и сын — 3 000 ₽</option>
               </select>
             </label>
             <label>Мастер
@@ -238,10 +249,13 @@
             </label>
           </div>
           <label>Имя
-            <input type="text" name="name" placeholder="Как вас зовут?" required>
+            <input type="text" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
           </label>
           <label>Телефон
-            <input type="tel" name="phone" placeholder="+7 ___ ___-__-__" required>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label class="hp" aria-hidden="true">Не заполняйте
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
           </label>
           <button class="button button-dark" type="submit">Записаться</button>
           <p class="form-status" id="formStatus" role="status"></p>
