@@ -264,10 +264,10 @@ footer p:last-child { text-align:right; }
     box-sizing:border-box !important;
     width:calc(100vw - 24px) !important;
     max-width:calc(100vw - 24px) !important;
-    height:calc(100vh - 24px) !important;
-    max-height:calc(100vh - 24px) !important;
-    height:calc(100dvh - 24px) !important;
-    max-height:calc(100dvh - 24px) !important;
+    height:min(640px, calc(100vh - 48px)) !important;
+    max-height:min(640px, calc(100vh - 48px)) !important;
+    height:min(640px, calc(100dvh - 48px)) !important;
+    max-height:min(640px, calc(100dvh - 48px)) !important;
     margin:12px auto !important;
   }
   [class^="dikidi-"][class$="-dialog"] iframe {
